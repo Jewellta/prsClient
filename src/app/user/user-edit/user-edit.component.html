@@ -1,1 +1,45 @@
-<p>user-edit works!</p>
+<app-menu></app-menu>
+
+<div>
+    <div>
+        <span>Single User Details</span>
+    </div>
+
+<table class="table table-sm" *ngIf="user">
+        <tr>
+            <th>Id</th>
+            <input [(ngModel)]="user.id" type="number" disabled>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <input [(ngModel)]="user.username" type="text">
+        </tr>
+        <tr>
+            <th>Password</th>
+            <input [(ngModel)]="user.password" type="password" >
+        </tr>
+        <tr>
+            <th>Firstname</th>
+            <input [(ngModel)]="user.firstname" type="text" >
+        </tr>
+        <tr>
+            <th>Lastname</th>
+            <input [(ngModel)]="user.lastname" type="text" >
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <input [(ngModel)]="user.phone" type="text" >
+        </tr>
+        <tr>
+            <th>Admin</th>
+            <input [(ngModel)]="user.isAdmin" type="checkbox">
+        </tr>
+        <tr>
+            <th>Reviewer</th>
+            <input [(ngModel)]="user.isReviewer" type="checkbox">
+        </tr>
+</table>
+
+<button (click)="save()" class="btn btn-primary">Save</button>
+</div>
+
