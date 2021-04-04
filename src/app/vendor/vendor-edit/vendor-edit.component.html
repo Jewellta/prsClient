@@ -1,0 +1,49 @@
+<app-menu></app-menu>
+
+<div>
+    <div>
+        <span>Vendor Edit</span>
+    </div>
+
+<table class="table table-sm" *ngIf="vendor">
+        <tr>
+            <th>Id</th>
+            <input [(ngModel)]="vendor.id" type="number" disabled>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <input [(ngModel)]="vendor.code" type="text">
+        </tr>
+        <tr>
+            <th>Name</th>
+            <input [(ngModel)]="vendor.name" type="password">
+        </tr>
+        <tr>
+            <th>Address</th>
+            <input [(ngModel)]="vendor.address" type="text" >
+        </tr>
+        <tr>
+            <th>City</th>
+            <input [(ngModel)]="vendor.city" type="text">
+        </tr>
+        <tr>
+            <th>State</th>
+            <input [(ngModel)]="vendor.state" type="text" >
+        </tr>
+        <tr>
+            <th>Zip</th>
+            <input [(ngModel)]="vendor.zip" type="text">
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <input [(ngModel)]="vendor.phone" type="text">
+        </tr>
+        <tr>
+            <th>Email</th>
+            <input [(ngModel)]="vendor.email" type="text">
+        </tr>
+</table>
+
+<button (click)="save()" class="btn btn-primary">Save</button>
+</div>
+

@@ -11,10 +11,12 @@ export class MenuComponent implements OnInit {
   menus:any[]=[
     {display: "Home", route:"/home"},
     {display: "Users", route:"/users/list"},
+    {display: "Vendor", route:"/vendors/list"},
     {display: "Login", route:"/users/login"}
   ]
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }
