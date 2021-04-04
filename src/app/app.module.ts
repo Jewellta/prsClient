@@ -17,6 +17,7 @@ import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.comp
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
+import { SearchVendorPipe } from './search-vendor.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { VendorListComponent } from './vendor/vendor-list/vendor-list.component'
     VendorCreateComponent,
     VendorDetailComponent,
     VendorEditComponent,
-    VendorListComponent
+    VendorListComponent,
+    SearchVendorPipe
   ],
   imports: [
     BrowserModule,
