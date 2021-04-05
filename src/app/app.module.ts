@@ -12,12 +12,18 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { MenuComponent } from './menu/menu.component';
-import { SearchUserPipe } from './search-user.pipe';
+import { SearchUserPipe } from './user/search-user.pipe';
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
-import { SearchVendorPipe } from './search-vendor.pipe';
+import { SearchVendorPipe } from './vendor/search-vendor.pipe';
+import { ProductComponent } from './product/product.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { SearchProductPipe } from './product/search-product.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,13 @@ import { SearchVendorPipe } from './search-vendor.pipe';
     VendorDetailComponent,
     VendorEditComponent,
     VendorListComponent,
-    SearchVendorPipe
+    SearchVendorPipe,
+    ProductComponent,
+    ProductListComponent,
+    ProductCreateComponent,
+    ProductDetailComponent,
+    ProductEditComponent,
+    SearchProductPipe
   ],
   imports: [
     BrowserModule,

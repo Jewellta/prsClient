@@ -1,0 +1,31 @@
+#login{
+    position: absolute;
+    top:20%;
+    border: 5px solid gray;
+    padding:10px;
+    left:40%;
+    border-radius: 1em;
+
+}
+h3{
+    text-align: center;
+    padding:10px;
+}
+#inputs{
+    text-align:center;
+}
+span{
+    padding:2px;
+    float:left;
+}
+input{
+    margin-left:1em;
+    float:right;
+}
+button{
+    margin:10px;
+    text-align: center;
+    position: relative;
+    left: 35%;
+    
+}

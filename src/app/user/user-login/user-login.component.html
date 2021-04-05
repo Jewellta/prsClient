@@ -1,19 +1,21 @@
 <div>
-    <div>
-        <span>Login</span>
+    <div id="login">
+        <h3>Login</h3>
+        <div id="inputs">
         <div>
-            <span>Username:</span>
+            <span>Username: </span>
             <span><input [(ngModel)]="user.username" type="text"> </span>
         </div>
         
         <div>
-            <span>Password:</span>
+            <span>Password:</span><span> </span>
             <span><input [(ngModel)]="user.password" type="password"> </span>
         </div>
-        <div>
-            <button (click)="login()" class="btn btn-primary">Login</button>
-        </div>
-        <div>
+    </div>
+    <div>
+    <button (click)="login()" class="btn btn-primary">Login</button>
+    </div>    
+    <div>
             {{message}}
         </div>
     </div>

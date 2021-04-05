@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Vendor} from './vendor/vendor.class'
+import {Vendor} from './vendor.class'
 @Pipe({
   name: 'searchVendor'
 })

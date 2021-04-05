@@ -5,3 +5,7 @@ body{
 input, select{
     border-radius: 7px;
 }
+#search{
+    float:right;
+
+}
