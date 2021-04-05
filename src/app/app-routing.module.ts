@@ -14,6 +14,12 @@ import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.comp
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
+import {RequestListComponent} from './request/request-list/request-list.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestEditComponent } from './request/request-edit/request-edit.component';
+
+
 
 const routes: Routes = [
 {path: '', redirectTo: "/", pathMatch: "full"},
@@ -31,6 +37,10 @@ const routes: Routes = [
 {path:'product/detail/:id', component:ProductDetailComponent},
 {path:'product/create', component:ProductCreateComponent},
 {path:'product/edit/:id', component:ProductEditComponent},
+{path:'request/list', component:RequestListComponent},
+{path:'request/detail/:id', component:RequestDetailComponent},
+{path:'request/create', component:RequestCreateComponent},
+{path:'request/edit/:id', component:RequestEditComponent},
 {path:'**', component:HomeComponent}
 ];
 

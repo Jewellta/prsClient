@@ -24,6 +24,11 @@ import { ProductCreateComponent } from './product/product-create/product-create.
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { SearchProductPipe } from './product/search-product.pipe';
+import { RequestListComponent } from './request/request-list/request-list.component';
+import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { SearchRequestPipe } from './request/search-request.pipe';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,12 @@ import { SearchProductPipe } from './product/search-product.pipe';
     ProductCreateComponent,
     ProductDetailComponent,
     ProductEditComponent,
-    SearchProductPipe
+    SearchProductPipe,
+    RequestListComponent,
+    RequestEditComponent,
+    RequestCreateComponent,
+    RequestDetailComponent,
+    SearchRequestPipe
   ],
   imports: [
     BrowserModule,
