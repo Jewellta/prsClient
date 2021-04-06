@@ -16,6 +16,7 @@
             <th>Unit</th>
             <th>Photopath</th>
             <th>VendorId</th>
+            <th>Actions</th>
         </tr>
         <tr *ngFor="let product of products | searchProduct:searchCriteria">
             <td>{{product.id}}</td>
