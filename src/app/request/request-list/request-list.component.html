@@ -13,23 +13,23 @@
         <th>Description</th>
         <th>Justification</th>
         <th>Rejection Reason</th>
-        <th>Delivery Method</th>
         <th>Status</th>
         <th>Total</th>
         <th>User</th>
+        <th>Actions</th>
     </tr>
     <tr *ngFor="let request of requests| searchRequest:searchCriteria ">
         <td>{{request.id}}</td>
         <td>{{request.description}}</td>
         <td>{{request.justification}}</td>
         <td>{{request.rejectionReason}}</td>
-        <td>{{request.deliveryMode}}</td>
         <td>{{request.status}}</td>
         <td>{{request.total}}</td>
         <td>{{request.user.username}}</td>
         <td>
             <a routerLink="/request/detail/{{request.id}}">Detail</a>
             <a routerLink="/request/edit/{{request.id}}">Edit</a>
+            <a routerLink="/request/requestline/{{request.id}}">Lines</a>
         </td>
     </tr>
 </table>

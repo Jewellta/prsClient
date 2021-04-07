@@ -1,0 +1,52 @@
+<app-menu></app-menu>
+
+<div>
+    <div>
+        <span>Request Lines</span>
+    </div>
+    <table class ="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>User</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngIf="request">
+            <td>{{request.id}}</td>
+            <td>{{request.description}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total}}</td>
+            <td>{{request.user.username}}</td>
+            <td><a routerLink="review">Review</a></td>          <!--fill in the review-->
+        </tr>
+    </table>
+</div>
+
+<div>
+<span>Requestlines | </span>
+<span><a routerLink="/requestline/create">Create</a></span>
+<table class="table table-sm">
+<tr>
+    <th>Id</th>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Line Total</th>
+    <th>Actions</th>
+</tr>
+<tr *ngFor="let requestline of requestlines">
+    <td>{{requestline.id}}</td>
+    <td>{{requestline.product.name}}</td>
+    <td>{{requestline.quantity}}</td>
+    <td>{{requestline.product.price}}</td>
+    <td>{{requestline.quantity * requestline.product.price}}</td>
+    <td>
+        <a routerLink="/requestline/edit/{{requestline.id}}">Edit</a>
+        <a routerLink="">Delete</a>
+    </td>
+</tr>
+</table>
+</div>
+

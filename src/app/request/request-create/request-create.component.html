@@ -1,1 +1,59 @@
-<p>request-create works!</p>
+<app-menu></app-menu>
+
+<div>
+    <div>
+        <span>Request Create</span>
+    </div>
+    <table class="table table-sm" *ngIf="request">
+        <tr>
+            <th>
+                Id
+            </th>
+            <input [(ngModel)]="request.id" type="number" disabled>
+        </tr>
+        <tr>
+            <th>
+                Description
+            </th>
+            <input [(ngModel)]="request.description" type="text" >
+        </tr>
+        <tr>
+            <th>
+                Justification
+            </th>
+            <input [(ngModel)]="request.justification" type="text">
+        </tr>
+        <tr>
+            <th>
+                Rejection Reason
+            </th>
+            <input [(ngModel)]="request.rejectionReason" type="text">
+        </tr>
+        <tr>
+            <th>
+                Delivery Mode
+            </th>
+            <input [(ngModel)]="request.deliveryMode" type="text" placeholder="pickup">
+        </tr>
+        <tr>
+            <th>
+                Status
+            </th>
+            <input [(ngModel)]="request.status" type="text" placeholder="new">
+        </tr>
+        <tr>
+            <th>
+                Total
+            </th>
+            <input [(ngModel)]="request.total" type="number" >
+        </tr>
+        <tr>
+            <th>
+                User Name
+            </th>
+            <input [(ngModel)]="user.username" type="text" disabled>
+        </tr>
+    </table>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+
+</div>
