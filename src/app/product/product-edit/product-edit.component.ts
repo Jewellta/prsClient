@@ -45,7 +45,7 @@ save():void{
       let id = this.route.snapshot.params.id;
     this.prodsvc.get(+id).subscribe(
       res =>{
-        console.log("Prouct: ", res);
+        console.log("Product: ", res);
         this.product=res;
       },
      err => {console.error(err);}

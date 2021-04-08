@@ -1,1 +1,35 @@
 <app-menu></app-menu>
+
+<div>
+    <div>
+        <span>Review List</span> |
+        <!--<span> | <input [(ngModel)]="searchCriteria" type="text" placeholder="search"></span>-->
+    </div>
+
+    <table class ="table table-sm">
+    <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Justification</th>
+        <th>Rejection Reason</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>User</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let request of requests">
+        <td>{{request.id}}</td>
+        <td>{{request.description}}</td>
+        <td>{{request.justification}}</td>
+        <td>{{request.rejectionReason}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total}}</td>
+        <td>{{request.user.username}}</td>
+        <td>
+            <button click="setapprove()" class="btn btn-primary">Approve</button>
+            <button click="setdeny()"class="btn btn-danger">Deny</button>
+        </td>
+    </tr>
+</table>
+<span><input [(ngModel)]="request.rejectionReason" type="text" placeholder="Must include Rejection Reason"> </span>
+</div>

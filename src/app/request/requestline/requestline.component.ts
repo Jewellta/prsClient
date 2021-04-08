@@ -28,6 +28,43 @@ products: Product[]=[];
     private rqsvc:RequestService
   ) { }
 
+  delete(requestline:Requestline):void{
+    this.rlsvc.remove(requestline).subscribe(
+      res =>{
+        console.log("Deleted")
+        this.refresh();
+      },
+      err =>{
+        console.error(err)
+      }
+    )
+  }
+refresh():void{
+  this.id=this.route.snapshot.params.id;
+  this.rqsvc.get(+this.id).subscribe(
+    res =>{
+      console.log("request:", res);
+      this.request=res;
+    },
+    err =>{
+      console.error(err);
+    }
+  )
+
+}
+review():void{
+  this.rqsvc.review(this.request).subscribe(
+    res =>{
+      console.log("approval pre process:")
+      this.request=res;
+      this.router.navigateByUrl("review/list");
+    },
+    err =>{
+      console.error(err);
+    }
+  )
+}
+
   ngOnInit(): void {
     this.prodsvc.list().subscribe(
       res=>{console.debug(res); 
@@ -35,22 +72,12 @@ products: Product[]=[];
       err=>{console.error(err);}
       );
 
-      this.rlsvc.list().subscribe(
-        res =>{console.log(res);
-        this.requestlines=res;},
-        err=>{console.error(err);}
-      );
-
-    this.id=this.route.snapshot.params.id;
-    this.rqsvc.get(+this.id).subscribe(
-      res =>{
-        console.log("requestline:", res);
-        this.request=res;
-      },
-      err =>{
-        console.error(err);
-      }
-    )
+      // this.rlsvc.list().subscribe(
+      //   res =>{console.log(res);
+      //   this.requestlines=res;},
+      //   err=>{console.error(err);}
+      // );
+        this.refresh();
   }
 
 }

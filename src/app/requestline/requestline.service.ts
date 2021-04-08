@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Requestline } from './requestline.class';
 import{HttpClient} from '@angular/common/http';
+import{Request} from '../request/request.class'
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,8 @@ private http:HttpClient
   }
   change(requestline:Requestline):Observable<any>{
     return this.http.put(`${this.baseurl}/${requestline.id}`, requestline)as Observable<any>
+  }
+  remove(requestline:Requestline):Observable<Requestline>{
+    return this.http.delete(`${this.baseurl}/${requestline.id}`)as Observable<Requestline>
   }
 }

@@ -23,11 +23,12 @@ export class RequestlineEditComponent implements OnInit {
   ) { }
 
 save(): void{
+  this.requestline.productId=+this.requestline.productId;
   console.log("before change", this.requestline);
   this.rlsvc.change(this.requestline).subscribe(
     res =>{
-      console.log("succesful edit")
-      this.router.navigateByUrl("/requestline/list");
+      console.log("succesful edit", res)
+      this.router.navigateByUrl("request/list");
     },
     err =>{
       console.error(err);

@@ -19,14 +19,14 @@
             <td>{{request.status}}</td>
             <td>{{request.total}}</td>
             <td>{{request.user.username}}</td>
-            <td><a routerLink="review">Review</a></td>          <!--fill in the review-->
+            <td><button (click)="review()" class="btn btn-warning">Review</button></td>          <!--fill in the review-->
         </tr>
     </table>
 </div>
 
 <div>
 <span>Requestlines | </span>
-<span><a routerLink="/requestline/create">Create</a></span>
+<span><a routerLink="/requestline/create/{{request.id}}">Create</a></span>
 <table class="table table-sm">
 <tr>
     <th>Id</th>
@@ -36,7 +36,7 @@
     <th>Line Total</th>
     <th>Actions</th>
 </tr>
-<tr *ngFor="let requestline of requestlines">
+<tr *ngFor="let requestline of request.requestLines">
     <td>{{requestline.id}}</td>
     <td>{{requestline.product.name}}</td>
     <td>{{requestline.quantity}}</td>
@@ -44,7 +44,7 @@
     <td>{{requestline.quantity * requestline.product.price}}</td>
     <td>
         <a routerLink="/requestline/edit/{{requestline.id}}">Edit</a>
-        <a routerLink="">Delete</a>
+        <a><button (click)="delete(requestline)" class="btn btn-danger">Delete</button></a>
     </td>
 </tr>
 </table>

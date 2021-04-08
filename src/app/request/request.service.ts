@@ -27,4 +27,16 @@ change(request:Request):Observable<any>{
 remove(request:Request):Observable<Request>{
   return this.http.delete(`${this.baseurl}/${request.id}`) as Observable<Request>
 }
+review(request:Request):Observable<any>{
+  return this.http.put(`${this.baseurl}/Review/${request.id}`, request) as Observable<Request>
+}
+approve(request:Request):Observable<any>{
+  return this.http.put(`${this.baseurl}/Approve/${request.id}`,request)as Observable<Request>
+}
+reject(request:Request):Observable<any>{
+  return this.http.put(`${this.baseurl}/Reject/${request.id}`,request)as Observable<Request>}
+ 
+reviews():Observable<Request[]>{
+  return this.http.get(`${this.baseurl}/Reviews`)as Observable<Request[]>
+  }
 }
