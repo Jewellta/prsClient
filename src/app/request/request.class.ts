@@ -8,7 +8,7 @@ export class Request{
     rejectionReason:string="";
     deliveryMode:string="Pickup";
     status:string="Review";
-    total:number=1;
+    total:number=0;
     userId:number=0;
     user:User=null;
     requestLines:Requestline[]=[];

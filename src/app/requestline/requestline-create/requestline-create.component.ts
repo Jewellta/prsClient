@@ -32,7 +32,7 @@ save():void{
   console.log("Before Create: ", this.requestline);
   this.rlsvc.create(this.requestline).subscribe(
     res => {console.log("create", res);
-    this.router.navigateByUrl('request/');
+    this.router.navigateByUrl('/request/list');
   },
   err =>{console.log(err)}
   );

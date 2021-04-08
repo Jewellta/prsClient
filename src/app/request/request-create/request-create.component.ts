@@ -40,3 +40,6 @@ save(): void{
   this.user=this.sys.loggedInUser;
 }
 }
+
+//ngif for tags that are not related to admin limit functions to users vendors and products
+//
