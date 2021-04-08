@@ -26,8 +26,9 @@
         <td>{{request.total}}</td>
         <td>{{request.user.username}}</td>
         <td>
-            <a><button click="setapprove()" class="btn btn-primary">Approve</button></a>
-            <a><button click="setdeny()"class="btn btn-danger">Deny</button> <span><input [(ngModel)]="request.rejectionReason" type="text" placeholder="Must include Rejection Reason"> </span></a>
+            <a><button (click)="setapprove(request)" class="btn btn-primary">Approve</button></a>
+            <span *ngIf="request.rejectionReason.length > 0"><a><button (click)="setdeny(request)"class="btn btn-danger">Deny</button></a></span>
+            <span><input [(ngModel)]="request.rejectionReason" type="text" placeholder="Must include Rejection Reason"> </span>
         </td>
     </tr>
 </table>

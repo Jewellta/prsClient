@@ -14,8 +14,8 @@ import { User } from '../user/user.class';
 export class ReviewComponent implements OnInit {
   
   requests:Request[]=[];
-  request: Request = new Request();
   user:User=new User();
+  id:number=0;
 
   constructor(
     private rqsvc:RequestService,
@@ -24,26 +24,33 @@ export class ReviewComponent implements OnInit {
     private route:ActivatedRoute
 
   ) { }
+  
+  refresh():void{
+    this.rqsvc.reviews(this.sys.loggedInUser.id).subscribe(
+    requests=>{console.log("Requests for approval: ", requests)
+    this.requests= requests
+    ;},
+    err=>{console.error(err);}
+    );
+  }
+   
 
-  setapprove(): void{
-      this.rqsvc.approve(this.request).subscribe(
+  setapprove(request:Request): void{
+      this.rqsvc.approve(request).subscribe(
         res =>{
           console.log("Approve")
-          this.request=res;
-          this.router.navigateByUrl("review/list");
+          this.refresh();
         },
         err =>{
           console.error(err)
         }
       )
     }
-  setdeny():void{
-      this.rqsvc.reject(this.request).subscribe(
+  setdeny(request:Request):void{
+      this.rqsvc.reject(request).subscribe(
         res =>{
           console.log("Denied")
-          //this.request.rejectionReason != null;
-          this.request=res;
-          this.router.navigateByUrl("review/list");
+          this.refresh();
         },
         err =>{
           console.error(err)
@@ -53,19 +60,10 @@ export class ReviewComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.sys.loggedInUser == null){
-      //this.router.navigateByUrl("/users/login");
+      this.router.navigateByUrl("/users/login");
     }         
-    //this.request.userId=this.sys.loggedInUser.id;
-    //this.user=this.sys.loggedInUser;
-
-    // this.user.id=this.route.snapshot.params.id;
-    this.rqsvc.reviews().subscribe(
-    requests=>{console.log("Requests for approval: ", requests)
-    this.requests= requests as Request[] 
-    //where this.request.userId != this.sys.loggedInUser
-    ;},
-    err=>{console.error(err);}
-    );
+    this.user=this.sys.loggedInUser;
+this.refresh();
   }
 
 }
