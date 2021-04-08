@@ -27,8 +27,8 @@
         <td>{{request.total}}</td>
         <td>{{request.user.username}}</td>
         <td>
-            <a routerLink="/request/detail/{{request.id}}">Detail</a>
-            <a routerLink="/request/edit/{{request.id}}">Edit</a>
+            <a routerLink="/request/detail/{{request.id}}">Detail</a><span> |</span>
+            <a routerLink="/request/edit/{{request.id}}">Edit</a><span> |</span>
             <a routerLink="/request/requestline/{{request.id}}">Lines</a>
         </td>
     </tr>

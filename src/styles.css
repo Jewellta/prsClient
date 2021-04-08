@@ -9,3 +9,6 @@ input, select{
     float:right;
 
 }
+a:link{
+    text-decoration: none;
+}

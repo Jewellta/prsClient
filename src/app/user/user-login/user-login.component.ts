@@ -29,6 +29,7 @@ export class UserLoginComponent implements OnInit {
           this.router.navigateByUrl("/users/list");
         },
         err =>{
+          alert("Incorrect Login!")
           console.error(err);
         }
       );

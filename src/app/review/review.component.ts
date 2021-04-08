@@ -39,6 +39,7 @@ export class ReviewComponent implements OnInit {
       this.rqsvc.approve(request).subscribe(
         res =>{
           console.log("Approve")
+
           this.refresh();
         },
         err =>{
@@ -47,7 +48,6 @@ export class ReviewComponent implements OnInit {
       )
     }
   setdeny(request:Request):void{
-    console.log(request)
       this.rqsvc.reject(request).subscribe(
         res =>{
           console.log("Denied")
@@ -64,6 +64,8 @@ export class ReviewComponent implements OnInit {
       this.router.navigateByUrl("/users/login");
     }         
     this.user=this.sys.loggedInUser;
+
+    
 this.refresh();
   }
 
