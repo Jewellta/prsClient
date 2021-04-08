@@ -29,7 +29,8 @@ export class ReviewComponent implements OnInit {
       this.rqsvc.approve(this.request).subscribe(
         res =>{
           console.log("Approve")
-          this.router.navigateByUrl("/request/list");
+          this.request=res;
+          this.router.navigateByUrl("review/list");
         },
         err =>{
           console.error(err)
@@ -40,7 +41,9 @@ export class ReviewComponent implements OnInit {
       this.rqsvc.reject(this.request).subscribe(
         res =>{
           console.log("Denied")
-          this.router.navigateByUrl("/request/list");
+          //this.request.rejectionReason != null;
+          this.request=res;
+          this.router.navigateByUrl("review/list");
         },
         err =>{
           console.error(err)
@@ -55,11 +58,11 @@ export class ReviewComponent implements OnInit {
     //this.request.userId=this.sys.loggedInUser.id;
     //this.user=this.sys.loggedInUser;
 
-    //this.user.id=this.route.snapshot.params.id;
+    // this.user.id=this.route.snapshot.params.id;
     this.rqsvc.reviews().subscribe(
     requests=>{console.log("Requests for approval: ", requests)
     this.requests= requests as Request[] 
-    //where this.request.userId !=this.sys.loggedInUser
+    //where this.request.userId != this.sys.loggedInUser
     ;},
     err=>{console.error(err);}
     );
