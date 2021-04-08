@@ -12,9 +12,10 @@ import { User } from 'src/app/user/user.class';
   styleUrls: ['./request-create.component.css']
 })
 export class RequestCreateComponent implements OnInit {
-
+  
   request: Request = new Request();
   user:User= new User();
+
 
   constructor(
     private reqsvc: RequestService,
@@ -33,10 +34,9 @@ save(): void{
 
   ngOnInit(): void {
    if(this.sys.loggedInUser == null){
-    //this.router.navigateByUrl("/users/login");
+  this.router.navigateByUrl("/users/login");
   }         
   this.request.userId=this.sys.loggedInUser.id;
   this.user=this.sys.loggedInUser;
-  
 }
 }

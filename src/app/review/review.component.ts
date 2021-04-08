@@ -47,6 +47,7 @@ export class ReviewComponent implements OnInit {
       )
     }
   setdeny(request:Request):void{
+    console.log(request)
       this.rqsvc.reject(request).subscribe(
         res =>{
           console.log("Denied")

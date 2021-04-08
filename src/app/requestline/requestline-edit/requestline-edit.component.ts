@@ -28,7 +28,7 @@ save(): void{
   this.rlsvc.change(this.requestline).subscribe(
     res =>{
       console.log("succesful edit", res)
-      this.router.navigateByUrl("request/list");
+      this.router.navigateByUrl("/request/list");
     },
     err =>{
       console.error(err);

@@ -27,25 +27,25 @@
             <th>
                 Rejection Reason
             </th>
-            <input [(ngModel)]="request.rejectionReason" type="text">
+            <input [(ngModel)]="request.rejectionReason" type="text"disabled>
         </tr>
         <tr>
             <th>
                 Delivery Mode
             </th>
-            <input [(ngModel)]="request.deliveryMode" type="text" placeholder="pickup">
+            <input [(ngModel)]="request.deliveryMode" type="text" value="pickup">
         </tr>
         <tr>
             <th>
                 Status
             </th>
-            <input [(ngModel)]="request.status" type="text" placeholder="new">
+            <input [(ngModel)]="request.status" type="text" disabled >
         </tr>
         <tr>
             <th>
                 Total
             </th>
-            <input [(ngModel)]="request.total" type="number" >
+            <input [(ngModel)]="request.total" type="number" disabled>
         </tr>
         <tr>
             <th>
