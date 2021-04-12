@@ -1,5 +1,7 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from 'src/app/system.service';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
 
@@ -18,7 +20,8 @@ export class UserDetailComponent implements OnInit {
   constructor(
     private usrsvc: UserService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private sys: SystemService
   ) { }
 
     edit(): void{
@@ -41,16 +44,20 @@ export class UserDetailComponent implements OnInit {
       );
     }
   ngOnInit(): void {
-    this.id= this.route.snapshot.params.id;
-    this.usrsvc.get(+this.id).subscribe(
-      res =>{
-        console.log("User:", res);
-        this.user=res;
+    
+ this.sys.chklogin();     
+ 
+ this.id= this.route.snapshot.params.id;
+ this.usrsvc.get(+this.id).subscribe(
+   res =>{
+     console.log("User:", res);
+     this.user=res;
+     this.user.isAdmin=this.sys.loggedInUser.isAdmin;
       },
       err =>{
         console.error(err);
       }
-    )
+    );
   }
 
 }

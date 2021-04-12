@@ -3,7 +3,7 @@
 <div>
     <div>
         <span>Product List</span> |
-        <span><a routerLink="/product/create">Create</a></span>
+        <span *ngif="this.user.isAdmin==true"><a routerLink="/product/create">Create</a></span>
         <span> | <input id="search" [(ngModel)]="searchCriteria" type="text" placeholder="search"></span>
     </div>
 
@@ -28,7 +28,7 @@
             <td>{{product.vendor.name}}</td>
                 <td>
                     <a routerLink="/product/detail/{{product.id}}">Detail</a><span> |</span>
-                    <a routerLink="/product/edit/{{product.id}}">Edit</a>
+                    <span *ngif="this.sys.loggeisAdmin==true"><a routerLink="/product/edit/{{product.id}}">Edit</a></span>
                 </td>
             </tr>
     </table>

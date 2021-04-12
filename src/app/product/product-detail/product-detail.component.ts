@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
+import {User} from 'src/app/user/user.class';
+import { SystemService } from 'src/app/system.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -12,12 +14,14 @@ export class ProductDetailComponent implements OnInit {
   product:Product=null;
   id: number=0;
   showVerify: boolean=false;
+  user:User=new User;
 
 
   constructor(
     private prodsvc:ProductService,
     private route: ActivatedRoute,
-    private router:Router
+    private router:Router,
+    private sys:SystemService
   ) { }
 
     edit():void{
@@ -42,6 +46,7 @@ export class ProductDetailComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.sys.chklogin()
     this.id = this.route.snapshot.params.id;
     this.prodsvc.get(+this.id).subscribe(
       res=>{
@@ -52,6 +57,7 @@ export class ProductDetailComponent implements OnInit {
         console.error(err);
       }
     );
+    this.user.isAdmin=this.sys.loggedInUser.isAdmin;
   }
 
 }

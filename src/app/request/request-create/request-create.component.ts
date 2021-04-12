@@ -33,13 +33,10 @@ save(): void{
 }
 
   ngOnInit(): void {
-   if(this.sys.loggedInUser == null){
-  this.router.navigateByUrl("/users/login");
-  }         
-  this.request.userId=this.sys.loggedInUser.id;
-  this.user=this.sys.loggedInUser;
+    this.sys.chklogin();
+       
+ this.request.userId=this.sys.loggedInUser.id;
+ this.user=this.sys.loggedInUser;
 }
 }
 
-//ngif for tags that are not related to admin limit functions to users vendors and products
-//

@@ -6,17 +6,19 @@ import {Router} from '@angular/router';
   providedIn: 'root'
 })
 export class SystemService {
-  
+
   loggedInUser:User=null;
 
   constructor(
     private router:Router
   ) { }
-
-  chklogin(): void{
+ 
+    chklogin(): void{
     if(this.loggedInUser==null){
-      this.router.navigateByUrl("/login")
+      this.router.navigateByUrl("users/login");
       console.warn("check for login");
-    }
+      }
+   }
   }
-}
+
+

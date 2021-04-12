@@ -60,9 +60,7 @@ export class ReviewComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    if(this.sys.loggedInUser == null){
-      this.router.navigateByUrl("/users/login");
-    }         
+    this.sys.chklogin();      
     this.user=this.sys.loggedInUser;
 
     
