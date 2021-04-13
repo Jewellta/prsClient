@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
 export class SystemService {
 
   loggedInUser:User=null;
+  isAdmin(){return this.loggedInUser != null && this.loggedInUser.isAdmin;}
 
   constructor(
     private router:Router
@@ -19,6 +20,8 @@ export class SystemService {
       console.warn("check for login");
       }
    }
+
+
   }
 
 

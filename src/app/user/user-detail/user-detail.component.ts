@@ -15,7 +15,7 @@ export class UserDetailComponent implements OnInit {
   user:User=null;
   id:number=0;
   showVerify:boolean=false;
-
+  get isAdmin(){return this.sys.isAdmin};
 
   constructor(
     private usrsvc: UserService,
@@ -52,7 +52,6 @@ export class UserDetailComponent implements OnInit {
    res =>{
      console.log("User:", res);
      this.user=res;
-     this.user.isAdmin=this.sys.loggedInUser.isAdmin;
       },
       err =>{
         console.error(err);

@@ -41,11 +41,12 @@
 </table>
 </div>
 <div>
-<span *ngif ="this.sys.loggedInUser.isAdmin == true">
-<button (click)="edit()" class ="btn btn-warning">Edit</button>
+<span *ngif ="isAdmin">
+<button (click)="edit()" class ="btn btn-warning">Edit</button></span>
+
 <button (click)="toggleVerify()" class ="btn btn-danger">Delete</button>
     <span *ngIf="showVerify">
     <button (click)="delete()" class ="btn btn-danger">Verify Delete</button>
     </span>
-</span>
+
 </div>
